@@ -5,18 +5,24 @@ h1 {
 
 /* 
 - centered elements + text elements 
-
+- view more details button (also completes part of critera - modal) 
+- no class to carousel inner
+- no styling carousel directly 
 */
-.carousel-inner {
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
   /* display: flex !important; */
 }
 .carousel-item {
   /* display: flex !important; */
   /* flex-direction: column !important; */
   background-color: gray !important;
+  padding-left: 10% !important;
 }
 .book-desc {
-  height: 50% !important;
+  /* height: 50% !important; */
+  max-width: 50%;
 }
 .book-area {
   display: flex !important;

@@ -6,7 +6,7 @@ var apiKey = "AIzaSyBVG1rpVMfNwBew0YglWcQdT0FSQPfR1E8";
 function createBookInfo(bookdata) {
   bookdata.forEach((book, index) => {
     var bookInfoArea = $("<div/>")
-      .addClass("book-area")
+      //.addClass("book-area") - do not use
       .addClass("carousel-item");
     //Create bookinfoArea div to show information about books
 
