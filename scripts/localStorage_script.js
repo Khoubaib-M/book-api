@@ -4,7 +4,8 @@ const history = $('.historyBtn')
 const historyContainer = $('#history-container')
 const clearHistory = $('#clearHistoryBtn')
 
-submit.on('click', function(){
+submit.on('click', function(e){
+  e.preventDefault();
   localStorage.setItem(localStorage.length + 1, bookName.val());
 });
 
