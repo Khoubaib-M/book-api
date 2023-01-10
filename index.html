@@ -20,13 +20,14 @@
       <h1>Book Info API</h1>
     </header>
     <main>
-      <div>
+      <div class="div-form-wrapper">
         <form type="text">
           <input id="title" type="text" placeholder="Title" />
           <input id="author" type="text" placeholder="Author" />
           <button id="search-button" type="submit">Search</button>
         </form>
         <button class="historyBtn">History</button>
+        <button id="clearHistoryBtn" class="historyBtn">Clear History</button>
       </div>
 
       <!-- Carousel -->
@@ -38,25 +39,25 @@
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img
-              src="assets/images/test-img.png"
+            <!-- <img
+              src="assets/images/test-img.pngg"
               class="d-block w-100"
               alt="..."
-            />
+            /> -->
           </div>
           <div class="carousel-item">
-            <img
-              src="assets/images/test-img-2.png"
+            <!-- <img
+              src="assets/images/test-img-2.pngg"
               class="d-block w-100"
               alt="..."
-            />
+            /> -->
           </div>
           <div class="carousel-item">
-            <img
-              src="assets/images/test-img-3.png"
+            <!-- <img
+              src="assets/images/test-img-3.pngg"
               class="d-block w-100"
               alt="..."
-            />
+            /> -->
           </div>
         </div>
 
@@ -80,6 +81,9 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <!-- History DIVs will be generate here with JS -->
+      <div id="history-container" class="history-container-div">TEST</div>
     </main>
 
     <!-- Scripts -->

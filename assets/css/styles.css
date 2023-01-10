@@ -1,0 +1,39 @@
+h1 {
+  color: white !important;
+  background-color: greenyellow !important;
+}
+
+/* 
+- centered elements + text elements 
+
+*/
+.carousel-inner {
+  /* display: flex !important; */
+}
+.carousel-item {
+  /* display: flex !important; */
+  /* flex-direction: column !important; */
+  background-color: gray !important;
+}
+.book-desc {
+  height: 50% !important;
+}
+.book-area {
+  display: flex !important;
+  flex-direction: column !important;
+  height: fit-content !important;
+  position: relative !important;
+  /* justify-content: center !important; */
+  /* margin: 0 10% !important; */
+  /* margin: 1.2rem 0 !important; */
+  /* align-items: center !important; */
+  padding: 1rem 1rem !important;
+}
+
+#history-container {
+  border: solid 2px green !important;
+  margin-top: 1rem !important;
+}
+.div-form-wrapper {
+  margin-bottom: 1rem !important;
+}
