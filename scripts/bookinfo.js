@@ -32,7 +32,7 @@ function createBookInfo(bookdata) {
     // Added modal - MM
     $(carouselInner).each(function (counter) {
       $(bookInfoArea).append(
-        `<a class="viewMoreLink" id="${index}">View More ${index}</a>`
+        `<a class="viewMoreLink" id="${index}">View More</a>`
       );
 
       var viewDescLink = document.querySelectorAll(".viewMoreLink");

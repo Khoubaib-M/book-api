@@ -10,6 +10,7 @@
   --readingBrown: #e5ddd1;
   --lightBrown: #c0ab8e;
   --darkBrown: #957954;
+  --text: #303030;
   /* 
   2018 Warm Sand color scheme
   https://www.w3schools.com/w3css/w3css_color_generator.asp
@@ -22,6 +23,7 @@
   */
 }
 
+/* Modal and Close buttons styling */
 #modalTest {
   border: solid 2px green;
   position: absolute !important;
@@ -62,10 +64,18 @@
   transition: all 0.5s;
 }
 
-/* Global Styles */
+/*** Global Styles ***/
+
+/* Links */
 .viewMoreLink {
-  text-decoration: underline;
-  color: black;
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: var(--readingBrown);
+  background-color: var(--darkBrown);
+  padding: 0.2rem 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
 }
 .book-title {
   font-weight: bold;
@@ -74,9 +84,43 @@
   font-style: italic;
 }
 
+/* PAGE STYLING */
+body {
+  background-color: var(--readingBrown);
+}
 h1 {
-  color: white !important;
-  background-color: greenyellow !important;
+  color: var(--readingBrown) !important;
+  background-color: var(--darkBrown) !important;
+  text-align: center;
+}
+
+.div-form-wrapper,
+form {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem;
+  margin: 0 2%;
+}
+.historyBtn,
+#clearHistoryBtn {
+  /*  */
+  margin: 0 2%;
+}
+
+/* buttons styling */
+#search-button,
+.historyBtn,
+#clearHistoryBtn {
+  border: none;
+  background-color: var(--darkBrown);
+  color: white;
+  border-radius: 7px;
+}
+#search-button:active,
+.historyBtn:active,
+#clearHistoryBtn:active {
+  color: black;
+  background-color: var(--readingBrown);
 }
 
 /* 
@@ -88,12 +132,36 @@ h1 {
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
+  color: black !important;
+  filter: invert(100%);
+  margin: 0 1%;
+  opacity: 1 !important;
+}
+.carousel {
+  margin: 0 2% !important;
 }
 .carousel-item {
   /* display: flex !important; */
   /* flex-direction: column !important; */
-  background-color: gray !important;
+  background-color: var(--readingBrown) !important;
+  border: dotted 2px var(--darkBrown);
+  border-radius: 8px;
   padding-left: 10% !important;
+  padding-bottom: 1rem;
+}
+.carousel-item div {
+  margin-top: 1rem !important;
+}
+
+/* Book image */
+.book-frontpage img {
+  border-radius: 3px;
+  border: solid 2px var(--darkBrown);
+}
+
+/* GIF */
+.book-gif img {
+  border-radius: 7px;
 }
 .book-desc {
   /* height: 50% !important; */
@@ -108,7 +176,7 @@ h1 {
 }
 
 #history-container {
-  border: solid 2px green !important;
+  /* border: solid 2px green !important; */
   margin-top: 1rem !important;
 }
 .div-form-wrapper {
