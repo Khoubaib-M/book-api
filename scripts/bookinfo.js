@@ -2,6 +2,7 @@ var searchButtonEl = $("#search-button");
 var searchInputtitleEl = $("#title");
 var searchInputauthorEl = $("#author");
 var apiKey = "AIzaSyBVG1rpVMfNwBew0YglWcQdT0FSQPfR1E8";
+var carouselInner = document.querySelectorAll(".carousel-inner");
 
 function createBookInfo(bookdata) {
   bookdata.forEach((book, index) => {
@@ -16,10 +17,10 @@ function createBookInfo(bookdata) {
 
     //Create booktitle, bookauthor,bookfrontpage, bookdesc divs and append to section div
     var bookTitle = $("<div/>").addClass("book-title").appendTo(bookInfoArea);
-    bookTitle.html(book.volumeInfo.title);
+    bookTitle.html("Title: " + book.volumeInfo.title);
 
     var bookAuthor = $("<div/>").addClass("book-author").appendTo(bookInfoArea);
-    bookAuthor.html(book.volumeInfo.authors[0]);
+    bookAuthor.html("Author: " + book.volumeInfo.authors[0]);
 
     var bookFrontpage = $("<div/>")
       .addClass("book-frontpage")
@@ -28,14 +29,57 @@ function createBookInfo(bookdata) {
     imagePage.attr("src", book.volumeInfo.imageLinks.smallThumbnail);
     console.log(book.volumeInfo.imageLinks.smallThumbnail);
 
-    var bookDesc = $("<div/>").addClass("book-desc").appendTo(bookInfoArea);
-    bookDesc.html(book.volumeInfo.description);
+    // Added modal - MM
+    $(carouselInner).each(function (counter) {
+      $(bookInfoArea).append(
+        `<a class="viewMoreLink" id="${index}">View More ${index}</a>`
+      );
+
+      var viewDescLink = document.querySelectorAll(".viewMoreLink");
+
+      $(viewDescLink).on("click", function (event) {
+        // console.log("test");
+        var getModalClass = document.getElementById("modalTest");
+        getModalClass.style.display = "block";
+
+        var bookNameTitle = document.getElementById("testParaTitle");
+        var bookNameDesc = document.getElementById("testParaDesc");
+        var bookNameAuthor = document.getElementById("testParaAuthor");
+
+        var btnClicked = event.target.id;
+        console.log(bookdata[btnClicked]);
+
+        // set modal information
+        bookNameTitle.textContent =
+          "Title: " + bookdata[btnClicked].volumeInfo.title;
+
+        bookNameDesc.textContent =
+          "Description: " + bookdata[btnClicked].volumeInfo.description;
+
+        bookNameAuthor.textContent =
+          "Author: " + bookdata[btnClicked].volumeInfo.authors;
+
+        // close modal by pressing X
+        var closeModal = document.getElementById("closeModal");
+        closeModal.addEventListener("click", function () {
+          getModalClass.style.display = "none";
+        });
+
+        // close modal by pressing button close
+        var closeModalBtn = document.getElementById("closeModalBtn");
+        closeModalBtn.addEventListener("click", () => {
+          getModalClass.style.display = "none";
+        });
+      });
+    });
+    // end of modal code
 
     getgiffy(book.etag, bookInfoArea);
 
     $(".carousel-inner").append(bookInfoArea);
   });
 }
+
 function getgiffy(etag, bookInfoArea) {
   $.get(
     `https://api.giphy.com/v1/gifs/random?tag=${etag}.data&api_key=kJUvzKYBeb8ygT26srrOdvDd4BJ4ITYv`
@@ -74,3 +118,10 @@ function init() {
 }
 
 init();
+
+// mm's testing
+
+function modalTest() {
+  //
+}
+modalTest();

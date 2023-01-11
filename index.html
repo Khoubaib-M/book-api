@@ -20,6 +20,14 @@
       <h1>Book Info API</h1>
     </header>
     <main>
+      <div id="modalTest" style="display: none">
+        <p id="closeModal">X</p>
+        <p id="testParaTitle">Test</p>
+        <p id="testParaDesc">Desc</p>
+        <p id="testParaAuthor">Author</p>
+        <p id="closeModalBtn">Close</p>
+      </div>
+      <!-- aaa -->
       <div class="div-form-wrapper">
         <form type="text">
           <input id="title" type="text" placeholder="Title" />
@@ -55,6 +63,53 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <!-- MODAL TEST -->
+      <!-- Button trigger modal -->
+      <!-- 
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        Launch demo modal
+      </button>
+    -->
+      <!-- Modal
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Description</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Book description info</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    -->
+      <!-- END OF MODAL TEST -->
 
       <!-- History DIVs will be generate here with JS -->
       <div id="history-container" class="history-container-div">TEST</div>
