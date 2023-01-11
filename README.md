@@ -41,7 +41,7 @@ Application is interactive.
 
 # Credits
 
-## Collarators
+## Collaborators
 
 Maciej: https://github.com/MrMaciejM
 Seh Cheong: https://github.com/sehcheong-ng
