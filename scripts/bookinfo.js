@@ -1,3 +1,4 @@
+// created global variables
 var searchButtonEl = $("#search-button");
 var searchInputtitleEl = $("#title");
 var searchInputauthorEl = $("#author");
@@ -5,6 +6,7 @@ var apiKey = "AIzaSyBVG1rpVMfNwBew0YglWcQdT0FSQPfR1E8";
 var carouselInner = document.querySelectorAll(".carousel-inner");
 
 function validateAuthor(authors) {
+    // selecting number of authors
     if (!authors) {
         authors = "Unknown Author";
     } else if (authors.length > 1) {
@@ -24,7 +26,7 @@ function createBookInfo(bookdata) {
             bookInfoArea.addClass("active");
         }
 
-        //Create booktitle, bookauthor,bookfrontpage, bookdesc divs and append to section div
+        //Create booktitle, bookauthor,bookfrontpage, bookdesc divs and append to carousel-inner div
         var bookTitle = $("<div/>").addClass("book-title").appendTo(bookInfoArea);
         bookTitle.html("Title: " + book.volumeInfo.title);
 
@@ -42,7 +44,6 @@ function createBookInfo(bookdata) {
         if (book.volumeInfo.imageLinks) {
             imagePage.attr("src", book.volumeInfo.imageLinks.smallThumbnail);
         }
-        // console.log(book.volumeInfo.imageLinks.smallThumbnail);
 
         // Added modal - MM
         $(carouselInner).each(function (counter) {
@@ -53,7 +54,7 @@ function createBookInfo(bookdata) {
             var viewDescLink = document.querySelectorAll(".viewMoreLink");
 
             $(viewDescLink).on("click", function (event) {
-                // console.log("test");
+                //creating elements inside modal
                 var getModalClass = document.getElementById("modalTest");
                 getModalClass.style.display = "block";
 
@@ -64,7 +65,7 @@ function createBookInfo(bookdata) {
                 var btnClicked = event.target.id;
                 console.log(bookdata[btnClicked]);
 
-                // set modal information
+                // displaying modal information
                 bookNameTitle.textContent =
                     "Title: " + bookdata[btnClicked].volumeInfo.title;
 
@@ -74,13 +75,13 @@ function createBookInfo(bookdata) {
                 bookNameAuthor.textContent =
                     "Author: " + bookdata[btnClicked].volumeInfo.authors;
 
-                // close modal by pressing X
+                // closing modal by pressing X
                 var closeModal = document.getElementById("closeModal");
                 closeModal.addEventListener("click", function () {
                     getModalClass.style.display = "none";
                 });
 
-                // close modal by pressing button close
+                // closinh modal by pressing close button
                 var closeModalBtn = document.getElementById("closeModalBtn");
                 closeModalBtn.addEventListener("click", () => {
                     getModalClass.style.display = "none";
@@ -96,12 +97,12 @@ function createBookInfo(bookdata) {
 }
 
 function getgiffy(etag, bookInfoArea) {
+    // get gif image using etag from bookdata of google api 
     $.get(
         `https://api.giphy.com/v1/gifs/random?tag=${etag}.data&api_key=kJUvzKYBeb8ygT26srrOdvDd4BJ4ITYv`
     ).then(function (bookgif) {
-        // Get data for giffy images using Ajax
-        // console.log(bookgif.data.images.preview_gif);
         var bookGifArea = $("<div/>").addClass("book-gif");
+        // creating div for gif image
         var gifPage = $("<img/>").appendTo(bookGifArea);
         gifPage.attr("src", bookgif.data.images.preview_gif.url);
         gifPage.attr("width", "150");
@@ -113,21 +114,22 @@ function getgiffy(etag, bookInfoArea) {
 
 function getBookInfo(event) {
     event.preventDefault();
+    // getting input values of title and author
     var searchTitle = searchInputtitleEl.val();
 
     var searchAuthor = searchInputauthorEl.val();
 
-    var q = `q=intitle:${searchTitle}`;
+    var q = `q=intitle:${searchTitle}`;// query search for inputted title
 
     if (searchAuthor) {
-        q += `+inauthor:${searchAuthor}`;
+        // add author to search query if user inputs author
+        q += `+inauthor:${searchAuthor}`;//appending inputted author to query search
     }
 
     var url = `https://www.googleapis.com/books/v1/volumes?${q}&orderBy=newest&key=${apiKey}`;
     $.get(url).then(function (bookdata) {
-        // console.log(bookdata.items);
         createBookInfo(bookdata.items);
-        // fetch book information through server api using apikey and publish year
+        // get book information through server api using apikey and passing querysearch 
     });
 }
 
