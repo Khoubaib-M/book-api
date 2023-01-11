@@ -1,3 +1,79 @@
+* {
+  /* GLOBAL RESETS */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+/* GLOBAL COLOR SCHEME */
+:root {
+  --readingBrown: #e5ddd1;
+  --lightBrown: #c0ab8e;
+  --darkBrown: #957954;
+  /* 
+  2018 Warm Sand color scheme
+  https://www.w3schools.com/w3css/w3css_color_generator.asp
+  */
+
+  /* 
+  - position fixed 
+  - background-color 
+  - border + radius 
+  */
+}
+
+#modalTest {
+  border: solid 2px green;
+  position: absolute !important;
+  background-color: white !important;
+  padding: 1rem !important;
+  margin-top: 35% !important ;
+  margin-left: 5% !important ;
+  z-index: 1 !important;
+  width: 90% !important;
+}
+#closeModal {
+  display: inline-block;
+  padding: 0.1rem 0.5rem !important;
+  border-radius: 3px !important;
+  font-weight: bold;
+  border: 2px solid black !important;
+  transition: all 0.5s !important;
+}
+#closeModal:hover {
+  background-color: red !important;
+  color: white !important;
+  cursor: pointer !important;
+}
+
+#closeModalBtn {
+  display: block !important;
+  text-align: center !important;
+  width: 100%;
+  /* border: solid 2px black !important; */
+  padding: 0.1rem 0.3rem !important;
+  border-radius: 9px;
+  background-color: black;
+  color: white;
+  transition: all 0.5s;
+}
+#closeModalBtn:hover {
+  background-color: red;
+  transition: all 0.5s;
+}
+
+/* Global Styles */
+.viewMoreLink {
+  text-decoration: underline;
+  color: black;
+}
+.book-title {
+  font-weight: bold;
+}
+.book-author {
+  font-style: italic;
+}
+
 h1 {
   color: white !important;
   background-color: greenyellow !important;
@@ -12,7 +88,6 @@ h1 {
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
-  /* display: flex !important; */
 }
 .carousel-item {
   /* display: flex !important; */
@@ -29,10 +104,6 @@ h1 {
   flex-direction: column !important;
   height: fit-content !important;
   position: relative !important;
-  /* justify-content: center !important; */
-  /* margin: 0 10% !important; */
-  /* margin: 1.2rem 0 !important; */
-  /* align-items: center !important; */
   padding: 1rem 1rem !important;
 }
 
