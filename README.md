@@ -2,9 +2,9 @@
 
 A project made for users to input their book and author of choice which then outputs a brief synopsis of what the book is about along with pictures of its cover.
 
-## Deployed page
+## Deployed page 
 
--- add link here --
+https://khoubaib-m.github.io/book-api/
 
 ## User Story
 
