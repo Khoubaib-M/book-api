@@ -1,0 +1,114 @@
+/* targeting mobile devices */
+/* Modal queries are towards the end of the file */
+@media screen and (min-width: 400px) {
+  .carousel-item div,
+  .carousel-item a {
+    display: flex !important;
+    justify-content: center;
+    margin-right: 8%;
+  }
+  .carousel-item a {
+    width: 30%;
+    margin-left: 30%;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .carousel-item a {
+    width: 25%;
+    margin-left: 33%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #title,
+  #author {
+    width: 50%;
+    margin-left: 25%;
+  }
+  .historyBtn,
+  #clearHistoryBtn {
+    width: 60%;
+    margin-left: 20%;
+  }
+  #search-button {
+    width: 63%;
+    margin-left: 18.5%;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .carousel-item a {
+    width: 15%;
+    margin-left: 38%;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  #title,
+  #author {
+    width: 40%;
+    margin-left: 30%;
+  }
+  .historyBtn,
+  #clearHistoryBtn {
+    width: 40%;
+    margin-left: 30%;
+  }
+  #search-button {
+    width: 41.8%;
+    margin-left: 29%;
+  }
+
+  .carousel-item div,
+  .carousel-item a {
+    display: flex !important;
+    justify-content: center;
+    margin-right: 12%;
+  }
+  .carousel-item a {
+    width: 15%;
+    margin-left: 36%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .carousel-item a {
+    width: 15%;
+    margin-left: 36.5%;
+  }
+}
+/* ********************* */
+/*** Modal Alignments ***/
+@media screen and (min-width: 400px) {
+  #modalTest {
+    bottom: 25%;
+    z-index: 2 !important;
+  }
+}
+@media screen and (min-width: 700px) {
+  #modalTest {
+    bottom: 35%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #modalTest {
+    bottom: 35%;
+    left: 10%;
+    width: 70% !important;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #modalTest {
+    bottom: 35%;
+    left: 18%;
+    width: 55% !important;
+  }
+}
+@media screen and (min-width: 1400px) {
+  #modalTest {
+    bottom: 35%;
+    left: 25%;
+    width: 40% !important;
+  }
+}

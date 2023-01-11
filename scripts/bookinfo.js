@@ -15,6 +15,7 @@ function validateAuthor(authors) {
     return `Author: ${authors}`;
 };
 
+
 function createBookInfo(bookdata) {
     $(".carousel-inner").html('');
     bookdata.forEach((book, index) => {
