@@ -13,8 +13,7 @@ As a bookworm, I want to simply find key information about any book so that I ma
 
 ## Technologies used
 
-Bootstrap
-Jquery
+Bootstrap, Jquery, Server API
 
 
 ## Usage
@@ -29,7 +28,7 @@ In the image below is the description shown of the book
 
 ## Acceptance Criteria
 
-Application uses at least two server-side APIs:
+Application uses at least two server-side APIs.
 
 Application uses client-side storage to store persistent data.
 
