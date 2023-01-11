@@ -9,7 +9,7 @@ submit.on("click", function (e) {
   localStorage.setItem(localStorage.length + 1, bookName.val());
 });
 
-history.on("click", function () {
+history.on("click", function() {
   historyContainer.empty();
   var historyTitle = $("<h4>Search History</h4>");
   historyContainer.append(historyTitle);
@@ -17,11 +17,29 @@ history.on("click", function () {
   for (var key in localStorage) {
     var value = localStorage.getItem(key);
     if (value !== null) {
-      var h5 = $("<h5>" + value + "</h5>");
-      historyContainer.append(h5);
-    }
-  }
+      var a_link = $("<p><a href='#' class='value-link'>" + value + "</a></p>");
+      historyContainer.append(a_link);
+    };
+  };
+
+  $(".value-link").click(function() {
+    var searchTitle = $(this).text();
+    console.log(searchTitle);
+    var q = `q=intitle:${searchTitle}`;
+
+    $.get(
+      `https://www.googleapis.com/books/v1/volumes?${q}&orderBy=newest&key=${apiKey}`
+    ).then(function (bookdata) {
+      console.log(bookdata.items);
+      createBookInfo(bookdata.items);
+    });
+
+  });
+
 });
+    
+
+
 
 clearHistory.on("click", function () {
   historyContainer.empty();
