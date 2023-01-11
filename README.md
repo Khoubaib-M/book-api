@@ -2,9 +2,9 @@
 
 A project made for users to input their book and author of choice which then outputs a brief synopsis of what the book is about along with pictures of its cover.
 
-## Deployed page
+## Deployed page 
 
--- add link here --
+https://khoubaib-m.github.io/book-api/
 
 ## User Story
 
@@ -13,8 +13,7 @@ As a bookworm, I want to simply find key information about any book so that I ma
 
 ## Technologies used
 
-Bootstrap
-Jquery
+Bootstrap, Jquery, Server API
 
 
 ## Usage
@@ -29,7 +28,7 @@ In the image below is the description shown of the book
 
 ## Acceptance Criteria
 
-Application uses at least two server-side APIs:
+Application uses at least two server-side APIs.
 
 Application uses client-side storage to store persistent data.
 
@@ -41,7 +40,7 @@ Application is interactive.
 
 # Credits
 
-## Collarators
+## Collaborators
 
 Maciej: https://github.com/MrMaciejM
 Seh Cheong: https://github.com/sehcheong-ng
