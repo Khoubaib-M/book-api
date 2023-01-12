@@ -82,7 +82,9 @@
 /*** Modal Alignments ***/
 @media screen and (min-width: 400px) {
   #modalTest {
-    bottom: 25%;
+    position: relative !important;
+    margin-top: 0 !important;
+    /* bottom: 25%; */
     z-index: 2 !important;
   }
 }
