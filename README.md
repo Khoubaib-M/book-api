@@ -20,11 +20,11 @@ Bootstrap, Jquery, Server API
 
 The webpage allows the user to search the name of the book and author. After clicking search the webpage will display a quick description of what the book is about along with a picture of the cover. 
 
-![Alt text](assets/images/bookapi.png)
+![Alt text](assets/images/search.png)
 
 In the image below is the description shown of the book
 
-![Alt text](assets/images/bookapi2.png)
+![Alt text](assets/images/viewmore.png)
 
 ## Acceptance Criteria
 
